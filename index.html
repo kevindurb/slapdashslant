@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    <style>
+      html {
+        background-color: #cf4315;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      #like {
+        color: white;
+        font-size: 50vh;
+        cursor: pointer;
+        transition: all 200ms ease-in;
+        transition-delay: 200ms;
+      }
+
+      #spanker {
+        color: white;
+        font-size: 75vh;
+        position: absolute;
+        top: 17vh;
+        left: calc(50vw - 29vh);
+        transform: rotateZ(90deg) rotateX(45deg) scale(1.5) translateY(25vw);
+        opacity: 0;
+        transition: all 400ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+        pointer-events: none;
+      }
+
+      #spanker.spank {
+        transform: rotateZ(90deg) rotateX(0) scale(1) translateY(0);
+        opacity: 1;
+      }
+
+      #like.spank {
+        transform: scale(0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <i id="like" class="fas fa-thumbs-up"></i>
+    <i id="spanker" class="fas fa-hand-paper"></i>
+    <script>
+        const like = document.getElementById('like');
+        const spanker = document.getElementById('spanker');
+        like.addEventListener('click', () => {
+          spanker.classList.add('spank');
+          like.classList.add('spank');
+          setTimeout(() => {
+            like.classList.remove('spank');
+          }, 400);
+          setTimeout(() => {
+            spanker.classList.remove('spank');
+          }, 600);
+        });
+    </script>
+  </body>
+</html>
