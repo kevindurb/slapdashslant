@@ -1,9 +1,11 @@
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
     <style>
       html {
         background-color: #cf4315;
+        font-family: 'Indie Flower', cursive;
       }
 
       body {
@@ -43,11 +45,23 @@
       #like.spank {
         transform: scale(0.8);
       }
+
+      #text {
+        position: absolute;
+        bottom: 0;
+        color: white;
+        left: 0;
+        right: 0;
+        font-size: 64px;
+        text-align: center;
+        margin: 24px;
+      }
     </style>
   </head>
   <body>
     <i id="like" class="fas fa-thumbs-up"></i>
     <i id="spanker" class="fas fa-hand-paper"></i>
+    <div id="text">Spank That Like Button!</div>
     <script>
         const like = document.getElementById('like');
         const spanker = document.getElementById('spanker');
